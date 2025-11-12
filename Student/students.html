@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý sinh viên</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h2>HỌC VIỆN HÀNG KHÔNG VIỆT NAM</h2>
+      <p>Let your dreams fly</p>
+    </div>
+    <div class="header-right">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student Icon">
+      <span>Quản lý sinh viên</span>
+    </div>
+  </header>
+
+ 
+  <main class="student-card">
+    <div class="card-left">
+       <img class="avatar" src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="avatar" />
+      <div class="info-group">
+        <label>Họ tên:</label>
+        <input type="text" placeholder="Nhập họ tên">
+      </div>
+      <div class="info-group">
+        <label>MSSV:</label>
+        <input type="text" placeholder="Nhập mã sinh viên">
+      </div>
+      <div class="info-group">
+        <label>Ngày sinh:</label>
+        <input type="date">
+      </div>
+
+      <input type="hidden" id="maTK" name="maTK" value="TK001">
+
+    </div>
+
+    <div class="card-right">
+      <div class="info-group">
+        <label>Quê quán:</label>
+        <input type="text" placeholder="Nhập quê quán">
+      </div>
+      <div class="info-group">
+        <label>Địa chỉ:</label>
+        <input type="text" placeholder="Nhập địa chỉ">
+      </div>
+      <div class="info-group">
+        <label>SĐT:</label>
+        <input type="text" placeholder="Nhập số điện thoại">
+      </div>
+      <div class="info-group">
+        <label>Email:</label>
+        <input type="email" placeholder="Nhập email">
+      </div>
+      
+      <button class="save-btn">Lưu thông tin</button>
+      <button class="edit-btn">Sửa thông tin</button>
+
+    </div>
+
+  </main>
+
+ 
+<script type="module">
+  import { db, addRandomStudents, fetchStudents } from "./firebase.js";
+  import { doc, setDoc, getDoc } 
+    from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+  //truy cập form
+  const hoTen = document.querySelector('input[placeholder="Nhập họ tên"]');
+  const maSV = document.querySelector('input[placeholder="Nhập mã sinh viên"]');
+  const ngaySinh = document.querySelector('input[type="date"]');
+  const queQuan = document.querySelector('input[placeholder="Nhập quê quán"]');
+  const diaChi = document.querySelector('input[placeholder="Nhập địa chỉ"]');
+  const sdt = document.querySelector('input[placeholder="Nhập số điện thoại"]');
+  const email = document.querySelector('input[placeholder="Nhập email"]');
+  const maTK = document.getElementById("maTK").value;
+  const btnSave = document.querySelector(".save-btn");
+  const btnEdit = document.querySelector(".edit-btn");
+
+  //Lưu hoặc cập nhật
+  btnSave.addEventListener("click", async () => {
+    if (!maSV.value.trim()) return alert("Nhập MSSV trước!");
+
+    const data = {
+      hoten: hoTen.value.trim(),
+      maSV: maSV.value.trim(),
+      ngaysinh: ngaySinh.value,
+      quequan: queQuan.value.trim(),
+      diachi: diaChi.value.trim(),
+      SDT: sdt.value.trim(),
+      email: email.value.trim(),
+      maTK
+    };
+
+    try {
+      await setDoc(doc(db, "SinhVien", data.maSV), data);
+      alert("Đã lưu thông tin!");
+    } catch (error) {
+      console.error("Lỗi khi lưu:", error);
+      alert("Lưu thất bại. Kiểm tra console để xem chi tiết.");
+    }
+  });
+
+  // Lấy tt sv sửa
+  btnEdit.addEventListener("click", async () => {
+    if (!maSV.value.trim()) return alert("Nhập MSSV để tìm!");
+
+    try {
+      const docSnap = await getDoc(doc(db, "SinhVien", maSV.value.trim()));
+      if (docSnap.exists()) {
+        const sv = docSnap.data();
+        hoTen.value = sv.hoten || "";
+        ngaySinh.value = sv.ngaysinh || "";
+        queQuan.value = sv.quequan || "";
+        diaChi.value = sv.diachi || "";
+        sdt.value = sv.SDT || "";
+        email.value = sv.email || "";
+        alert("Đã tải thông tin sinh viên!");
+      } else {
+        alert("Không tìm thấy sinh viên có mã " + maSV.value);
+      }
+    } catch (error) {
+      console.error("Lỗi khi tải:", error);
+      alert("Không thể tải thông tin sinh viên.");
+    }
+  });
+
+   //addRandomStudents(); 
+</script>
+
+
+</body>
+</html>
+

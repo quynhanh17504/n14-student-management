@@ -4,7 +4,7 @@ Giảng viên: Thầy N.L.Anh Tuấn.
 Đề tài: Nghiên cứu NoSQL trong Firebase, xây dựng hệ thống quản lý sinh viên.
 Nhóm 14:
 - Nhóm trưởng: T.H.Quỳnh Anh.
-- Thành viên: P.V.Hoàng Duy, N.Tuấn Đạt, V.Quốc Khánh, T.T.Phương Thảo.
+- Thành viên: P.V.Hoàng Duy, V.Quốc Khánh, T.T.Phương Thảo.
 
 Mô tả dự án: Website quản lý sinh viên – gồm các chức năng:
 - Quản lý sinh viên, giảng viên, lớp học.
@@ -12,3 +12,4 @@ Mô tả dự án: Website quản lý sinh viên – gồm các chức năng:
 - Thống kê kết quả học tập.
 
 Demo: 
+

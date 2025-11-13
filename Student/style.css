@@ -112,35 +112,111 @@ header p {
 .info-group input:focus {
   outline: 2px solid #3c9ccf;
 }
-.save-btn {
+
+/* === BUTTONS === */
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
   margin-top: 20px;
-  background: #3c9ccf;
-  color: white;
+}
+
+button {
+  padding: 10px 20px;
   border: none;
-  padding: 10px 25px;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 500;
   cursor: pointer;
   transition: 0.3s;
+  color: white;
 }
+
+.save-btn {
+  background-color: #00b4d8;
+}
+
 .save-btn:hover {
-  background: #3cb9cf;
+  background-color: #0096c7;
 }
 
-.edit-btn {
-  margin-top: 10px;
-  background: #3c9ccf;
+.delete-btn {
+  background-color: #ef476f;
+}
+
+.delete-btn:hover {
+  background-color: #d93d5c;
+}
+
+.refresh-btn {
+  background-color: #06d6a0;
+}
+
+.refresh-btn:hover {
+  background-color: #05b384;
+}
+
+/* === TABLE === */
+section {
+  margin-top: 50px;
+  width: 85%;
+  text-align: center;
+}
+
+section h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+th {
+  background-color: #0077b6;
+  color: white;
+  font-size: 15px;
+}
+
+tr:hover {
+  background-color: #f1f7ff;
+}
+
+.editRow {
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 25px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.edit-btn:hover {
-  background: #3cb9cf;
+.editRow:hover {
+  background-color: #0056b3;
 }
 
+.deleteRow {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
+.deleteRow:hover {
+  background-color: #a71d2a;
+}

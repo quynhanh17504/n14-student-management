@@ -11,7 +11,14 @@ import {
   storageBucket: "quanlysinhvien-39.firebasestorage.app",
   messagingSenderId: "499046131803",
   appId: "1:499046131803:web:7e77f17c8a55f2e3c9777e",
-  measurementId: "G-ZTES2VRRZY"
+  measurementId: "G-ZTES2VRRZY",
+
+  apiKey: "AIzaSyDc-pvw9cNjlDU4rZvThah27dmJBVLbBPs",
+  authDomain: "beater8-a092a.firebaseapp.com",
+  projectId: "beater8-a092a",
+  storageBucket: "beater8-a092a.firebasestorage.app",
+  messagingSenderId: "616090417167",
+  appId: "1:616090417167:web:baeca4c0f13196ca8f8b7a"
 };
 
 

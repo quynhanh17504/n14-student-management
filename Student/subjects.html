@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Môn học</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-left">
+            <h2>HỌC VIỆN HÀNG KHÔNG VIỆT NAM</h2>
+            <p>Let your dreams fly</p>
+        </div>
+        <div class="header-right">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="icon">
+            <span>Quản lý Môn học</span>
+        </div>
+    </header>
+
+    <main class="student-card">
+        <div class="card-left">
+            <img class="avatar" src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="subject icon" />
+            <div class="info-group">
+                <label>Mã môn:</label>
+                <input type="text" id="maMon" placeholder="Nhập mã môn">
+            </div>
+            <div class="info-group">
+                <label>Tên môn:</label>
+                <input type="text" id="tenMon" placeholder="Nhập tên môn">
+            </div>
+        </div>
+
+        <div class="card-right">
+            <div class="info-group">
+                <label>Mã khoa:</label>
+                <input type="text" id="maKhoa" placeholder="Nhập mã khoa">
+            </div>
+            <div class="button-group">
+                <button class="save-btn">Thêm</button>
+                <button class="refresh-btn">Cập nhật</button>
+            </div>
+        </div>
+    </main>
+
+    <section style="margin-top:40px; width:80%; text-align:center;">
+        <h3>Danh sách Môn học</h3>
+        <table id="subjectTable">
+            <thead>
+                <tr>
+                    <th>Mã môn</th>
+                    <th>Tên môn</th>
+                    <th>Mã khoa</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script type="module" src="subjects.js"></script>
+</body>
+
+</html>

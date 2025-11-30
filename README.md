@@ -1,7 +1,10 @@
 # n14-student-management
-Dự án môn học: Hệ Quản Trị Cơ Sở Dữ Liệu - 01xxxxxx5701 - Học Viện Hàng Không Việt Nam. 
+Dự án môn học: Hệ Quản Trị Cơ Sở Dữ Liệu - 01xxxxxx5701 - Khoa Công nghệ thông tin - Học Viện Hàng Không Việt Nam.
+
 Giảng viên: Thầy Nguyễn Lương Anh Tuấn.
+
 Đề tài: Nghiên cứu NoSQL trong Firebase, xây dựng hệ thống quản lý sinh viên.
+
 Nhóm 14:
 - Nhóm trưởng: Tạ Hà Quỳnh Anh.
 - Thành viên: Phạm Vũ Hoàng Duy, Văn Quốc Khánh, Trần Thị Phương Thảo.

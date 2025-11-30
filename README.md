@@ -11,5 +11,5 @@ Mô tả dự án: Website quản lý sinh viên – gồm các chức năng:
 - Nhập và xem điểm.
 - Thống kê kết quả học tập.
 
-Demo: 
+Demo: https://drive.google.com/file/d/1GRKcZsl5pPkas6ux-q31PeT_DTuzZlvV/view?usp=sharing
 
